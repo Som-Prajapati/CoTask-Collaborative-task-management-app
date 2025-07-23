@@ -1,0 +1,26 @@
+{
+  "name": "cotask",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "test": "vitest",
+    "cf-typegen": "wrangler types"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.2",
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "drizzle-kit": "^0.25.0",
+    "typescript": "^5.5.2",
+    "vitest": "2.0.5",
+    "wrangler": "^3.60.3"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "cotask": "file:",
+    "drizzle-orm": "^0.34.1",
+    "hono": "^4.6.4"
+  }
+}

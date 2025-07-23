@@ -1,0 +1,12 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "cotask"
+main = "src/index.ts"
+compatibility_date = "2024-10-11"
+compatibility_flags = ["nodejs_compat"]
+
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "dbtest2"
+database_id = "14846254-2f36-490f-9c5c-191a944267d3"
+migrations_dir = "src/database/drizzle"
