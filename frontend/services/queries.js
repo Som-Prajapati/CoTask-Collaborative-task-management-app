@@ -7,7 +7,7 @@ export function useGetMyTaskQuery(userGmail, listName) {
     queryKey: ["getTask", userGmail, listName],
     queryFn: async () => {
       const response = await axios.post(
-        "https://cotask.somprajapati24-dcf.workers.dev/myTask/fetch",
+        `${API_PREFIX_SECRET}/myTask/fetch`,
         {
           user_gmail: userGmail,
           list_name: listName
@@ -24,7 +24,7 @@ export function useGetMyTeamTaskQuery(userGmail, TeamName) {
     queryKey: ["getMyTask", userGmail, TeamName],
     queryFn: async () => {
       const response = await axios.post(
-        "https://cotask.somprajapati24-dcf.workers.dev/teamTask/fetch",
+        `${API_PREFIX_SECRET}/teamTask/fetch`,
         {
           user_gmail: userGmail,
           team_name: TeamName
@@ -43,7 +43,7 @@ export function useGetUserQuery() {
     queryFn: async () => {
       try {
         const response = await axios.get(
-          "https://cotask.somprajapati24-dcf.workers.dev/user/fetch"
+          `${API_PREFIX_SECRET}/user/fetch`
         );
         return response.data;
       } catch (error) {
@@ -61,7 +61,7 @@ export function useGetListQuery(userMail){
     queryFn: async () =>{
       try{
         const response = await axios.post(
-          "https://cotask.somprajapati24-dcf.workers.dev/list/fetch",
+          `${API_PREFIX_SECRET}/list/fetch`,
           {
             user_gmail:userMail
           }
@@ -83,7 +83,7 @@ export function useGetMyTeamQuery(userGmail) {
     queryKey: ["getTeam", userGmail],
     queryFn: async () => {
       const response = await axios.post(
-        "https://cotask.somprajapati24-dcf.workers.dev/team/fetch",
+        `${API_PREFIX_SECRET}/team/fetch`,
         {
           user_gmail: userGmail
         }
@@ -100,7 +100,7 @@ export function useGetAssignedQuery(team_name, task_id) {
     queryKey: ["getAssigned", team_name, task_id],
     queryFn: async () => {
       const response = await axios.post(
-        "https://cotask.somprajapati24-dcf.workers.dev/taskAssigned/fetch",
+        `${API_PREFIX_SECRET}/taskAssigned/fetch`,
         {
           team_name,
           task_id: parseInt(task_id, 10)

@@ -9,7 +9,7 @@ export function useCreateUserMutation() {
       // console.log('imgText',imgText)
       try {
         const response = await axios.post(
-          "https://cotask.somprajapati24-dcf.workers.dev/user/create",
+          `${API_PREFIX_SECRET}/user/create`,
           JSON.stringify({
             name,
             gmail,
@@ -42,7 +42,7 @@ export function useCreateListMutation() {
       
       return (
         await axios.post(
-          "https://cotask.somprajapati24-dcf.workers.dev/list/create",
+          `${API_PREFIX_SECRET}/list/create`,
           JSON.stringify({ name: title, user_gmail:email }), // Send as stringified JSON with 'name' key
           {
             headers: { 
@@ -68,7 +68,7 @@ export function useCreateTeamMutation() {
 
       return (
         await axios.post(
-          "https://cotask.somprajapati24-dcf.workers.dev/team/create",
+          `${API_PREFIX_SECRET}/team/create`,
           JSON.stringify({ title: title, user_array: names }), // Send as stringified JSON with 'title' and 'user_array' keys
           {
             headers: { 
@@ -96,7 +96,7 @@ export function useUpdateTaskStatusMutation() {
 
       return (
         await axios.patch(
-          "https://cotask.somprajapati24-dcf.workers.dev/myTask/update",
+          `${API_PREFIX_SECRET}/myTask/updat`,
           JSON.stringify({ 
             user_gmail,
             task_name,
@@ -128,7 +128,7 @@ export function useCreateMyTaskMutation() {
 
       try {
         const response = await axios.post(
-          "https://cotask.somprajapati24-dcf.workers.dev/myTask/create",
+          `${API_PREFIX_SECRET}/myTask/create`,
           JSON.stringify({
             title,
             description,
@@ -162,7 +162,7 @@ export function useCreateMyTeamTaskMutation() {
     mutationFn: async ({ title, description, priority, end_d, taskStatus, userMail, teamName , userArray }) => {
       try {
         const response = await axios.post(
-          "https://cotask.somprajapati24-dcf.workers.dev/teamTask/create",
+          `${API_PREFIX_SECRET}/teamTask/creat`,
           JSON.stringify({
             title,
             description,
@@ -201,7 +201,7 @@ export function useDeleteMyTaskMutation() {
 
     try {
     const response = await axios.delete(
-      "https://cotask.somprajapati24-dcf.workers.dev/myTask/delete",
+      `${API_PREFIX_SECRET}/myTask/delete`,
       {
         headers: { 
           "Content-Type": "application/json",
@@ -233,7 +233,7 @@ export function useDeleteListMutation() {
 
     try {
     const response = await axios.delete(
-      "https://cotask.somprajapati24-dcf.workers.dev/list/delete",
+      `${API_PREFIX_SECRET}/list/delete`,
       {
         headers: { 
           "Content-Type": "application/json",
@@ -265,7 +265,7 @@ export function useDeleteTeamMutation() {
 
     try {
     const response = await axios.delete(
-      "https://cotask.somprajapati24-dcf.workers.dev/team/delete",
+      `${API_PREFIX_SECRET}/team/delete`,
       {
         headers: { 
           "Content-Type": "application/json",
@@ -299,7 +299,7 @@ export function useDeleteTeamTaskMutation() {
 
     try {
     const response = await axios.delete(
-      "https://cotask.somprajapati24-dcf.workers.dev/teamTask/delete",
+      `${API_PREFIX_SECRET}/teamTask/delete`,
       {
         headers: { 
           "Content-Type": "application/json",
